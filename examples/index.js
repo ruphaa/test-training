@@ -1,4 +1,4 @@
-const example = require('./example');
+const example = require('./awesome-example');
 
 module.exports = {
   example
