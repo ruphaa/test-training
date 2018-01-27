@@ -7,7 +7,7 @@ describe.only('github util', () => {
     const repo = 'git-flight-rules';
     getReadMeContents(owner, repo).then((res) => {
       console.log(res.status);
-      // expect(res).to.be.a('json');
+      expect(res.status).to.equal(200);
       done();
     });
   }).timeout(5000);
