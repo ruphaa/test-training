@@ -2,7 +2,7 @@ import { expect } from 'chai';
 import { getReadMeFile, decodeBase64String, getReadMeData } from '../src/github-util';
 
 describe.only('github util', () => {
-  it('get Readme Contents - should return json', (done) => {
+  it(' should return json while reading getReadMeFile', (done) => {
     const owner = 'k88hudson';
     const repo = 'git-flight-rules';
     getReadMeFile(owner, repo).then((res) => {
@@ -11,7 +11,7 @@ describe.only('github util', () => {
     });
   });
 
-  it('decode the base64 string', () => {
+  it('should decode the base64 string', () => {
     const input = 'SSBsb3ZlIFRERCA8Mw==';
     const output = decodeBase64String(input);
     expect(output).to.equal('I love TDD <3');
@@ -24,14 +24,6 @@ describe.only('github util', () => {
     input = null;
     output = decodeBase64String(input);
     expect(output).to.be.null;
-  });
-
-  it('get readme data', () => {
-    const owner = 'k88hudson';
-    const repo = 'git-flight-rules';
-    getReadMeData(owner, repo).then((data) => {
-    console.log(data); // eslint-disable-line
-    });
   });
 
   it('should return null when something goes wrong', (done) => {
